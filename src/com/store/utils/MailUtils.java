@@ -24,13 +24,13 @@ public class MailUtils {
 		props.setProperty("mail.transport.protocol", "SMTP");
 		
 		//设置主机名和是否开启认证（认证必须开启）
-		props.setProperty("mail.host", "localhost");
+		props.setProperty("mail.host", "smtp.163.com");
 		props.setProperty("mail.smtp.auth", "true");// 鎸囧畾楠岃瘉涓簍rue
 
 		// 认证，输入用户名和密码
 		Authenticator auth = new Authenticator() {
 			public PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("service", "123");
+				return new PasswordAuthentication("13408553223@163.com", "5420019hh");
 			}
 		};
 
@@ -40,7 +40,7 @@ public class MailUtils {
 		Message message = new MimeMessage(session);
 
 		//设置发送人邮件
-		message.setFrom(new InternetAddress("service@store.com"));
+		message.setFrom(new InternetAddress("13408553223@163.com"));
 
 		//设置收件人
 		message.setRecipient(RecipientType.TO, new InternetAddress(email)); 
